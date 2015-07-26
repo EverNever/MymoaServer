@@ -3,13 +3,6 @@ var router = express.Router();
 
 var newsDao = require('../dao/newsDao');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  //res.send('respond with a resource');
-    res.render('updateUser');
-});
-
-
 // 增加用户
 //TODO 同时支持get,post
 router.post('/addNews', function(req, res, next) {
@@ -17,7 +10,7 @@ router.post('/addNews', function(req, res, next) {
 });
 
 
-router.get('/queryList', function(req, res, next) {
+router.get('/queryNewsList', function(req, res, next) {
     newsDao.queryList(req, res, next);
 });
 

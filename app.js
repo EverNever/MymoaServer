@@ -34,10 +34,10 @@ app.use(logger('combined', {stream: accessLogStream}));
 
 app.use('/', routes);
 app.use('/api/users', users);
-// app.use('/api/doc', doc);
+app.use('/api/doc', doc);
 // app.use('/api/mail', mail);
 app.use('/api/news', news);
-// app.use('/api/post', post);
+app.use('/api/post', post);
 // app.use('/api/contact', contact);
 
 // catch 404 and forward to error handler
