@@ -14,7 +14,7 @@ router.get('/queryNewsList', function(req, res, next) {
     newsDao.queryList(req, res, next);
 });
 
-router.get('/queryContent', function(req, res, next) {
+router.get('/queryNewsContent', function(req, res, next) {
     newsDao.queryById(req, res, next);
 });
 

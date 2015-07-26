@@ -144,7 +144,7 @@ return:
 "msg": "操作失败"
 }
 
-###4.queryContent###
+###4.queryNewsContent###
 
 params:
 
@@ -384,6 +384,7 @@ return:
 
 ###1.addContact###
 
+
 ###2.delContact
 
 ###3.queryContactList
@@ -397,13 +398,57 @@ return:
 ###7.queryGroupContactList
 
 
-
-
 ##6.mail##
 
 ###1.sendMail###
 
+method:
+POST
+
+params:
+* fromuid 	发送方ID
+* touid 	接收方ID
+* time 	时间
+* content 	内容
+
+return:
+{
+  "code": 200,
+  "msg": "增加文档成功"
+}
+
 ###2.queryMailList###
+
+params:
+* uid 		用户ID
+
+return:
+[
+  {
+    "mailid": 1,
+    "fromuid": "123",
+    "touid": "1234",
+    "time": "2015-07-21T16:00:00.000Z",
+    "content": "hello"
+  },
+  {
+    "mailid": 2,
+    "fromuid": "1234",
+    "touid": "123",
+    "time": "2015-07-28T16:00:00.000Z",
+    "content": "你在干嘛呢？"
+  }
+]
 
 ###3.queryMailContent###
 
+params:
+* mailid 	邮件ID
+
+return:
+{
+  "fromuid": "123",
+  "touid": "1234",
+  "time": "2015-07-21T16:00:00.000Z",
+  "content": "hello"
+}

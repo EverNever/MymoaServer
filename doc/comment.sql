@@ -7,9 +7,9 @@ insert into user (uid, uname, password, issu)
 --站内信
 ----发送
 insert into mail (fromuid, touid, issend,
-   issrecv, time, content, attachment, isfromdel, istodel)
+   issrecv, time, content, isfromdel, istodel)
   values (_fromuid, _touid, 1,
-   0, _time, _content, _attachment, 0, 0);
+   0, _time, _content, 0, 0);
 ----接收未查看
 select * from mail
   where touid = _touid and isrecv = 0
