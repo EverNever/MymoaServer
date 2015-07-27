@@ -397,7 +397,7 @@ return:
   "msg": "增加联系人成功"
 }
 
-###2.delContact
+###2.delContact###
 
 params:
 * uid   用户ID
@@ -408,7 +408,7 @@ return:
   "msg": "删除联系人成功"
 }
 
-###3.   
+###3.queryContactList###
 
 params:
 无
