@@ -384,18 +384,114 @@ return:
 
 ###1.addContact###
 
+method:
+POST
+
+params:
+* uid   手机号，同时是uid
+* groupid   分组ID
+
+return:
+{
+  "code": 200,
+  "msg": "增加联系人成功"
+}
 
 ###2.delContact
 
-###3.queryContactList
+params:
+* uid   用户ID
+
+return:
+{
+  "code": 200,
+  "msg": "删除联系人成功"
+}
+
+###3.   
+
+params:
+无
+
+return:
+[
+  {
+    "uname": "han",
+    "uid": "123"
+  },
+  {
+    "uname": "huhu",
+    "uid": "1234"
+  },
+  {
+    "uname": "huhu",
+    "uid": "12345"
+  }
+]
 
 ###4.queryContactContent
 
+params:
+* uid   手机号
+
+return:
+{
+  "uname": "han",
+  "uid": "123"
+}
+
 ###5.addContactGroup
+
+method:
+POST
+
+params:
+* groupname   分组名
+
+return:
+{
+  "code": 200,
+  "msg": "增加联系人分组成功"
+}
+
 
 ###6.queryGroupList
 
+params:
+无
+
+return:
+[
+  {
+    "groupid": 1,
+    "groupname": "工作"
+  },
+  {
+    "groupid": 2,
+    "groupname": "大学"
+  },
+  {
+    "groupid": 3,
+    "groupname": "朋友"
+  },
+  {
+    "groupid": 4,
+    "groupname": "女人"
+  }
+]
+
 ###7.queryGroupContactList
+
+params:
+* groupid   分组ID
+
+return:
+[
+  {
+    "uname": "han",
+    "uid": "123"
+  }
+]
 
 
 ##6.mail##
