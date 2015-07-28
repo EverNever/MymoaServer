@@ -1,5 +1,5 @@
 var doc = {
-	addDoc: 'insert into doc (uid, title, content, altertime) values (?, ?, ?, ?)',
+	addDoc: 'insert into doc (uid, title, content, altertime) values (?,?,?,?)',
 	editDoc: 'update doc set content = ?, altertime = ? where docid = ?',
 	delDoc: 'delete from doc where docid = ?',
 	queryDocList: 'select docid,title from doc',

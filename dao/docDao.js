@@ -23,16 +23,17 @@ module.exports = {
     addDoc: function (req, res, next) {
         pool.getConnection(function(err, connection) {
             // 获取前台页面传过来的参数
-            var param = req.query || req.params;
-
-            connection.query($sql.addDoc, [param.uid, param.title, param.content, param.altertime], function(err, result) {
+            var param = req.body;
+            console.log(param);
+            connection.query($sql.addDoc,[param.uid, param.title, param.content, param.altertime], function(err, result) {
+                console.log(err);
+                console.log(result);
                 if(result) {
                     result = {
                         code: 200,
                         msg:'增加文档成功'
                     };    
                 }
-
                 // 以json形式，把操作结果返回给前台页面
                 jsonWrite(res, result);
 
@@ -43,7 +44,7 @@ module.exports = {
     },
     editDoc: function(req, res, next) {
         pool.getConnection(function(err, connection){
-            var param = req.query || req.params;
+            var param = req.body;
             connection.query($sql.editDoc,[param.content, param.altertime, param.docid], function(err, result){
                 if(result) {
                     result = {
@@ -58,8 +59,8 @@ module.exports = {
     },
     delDoc: function(req,res,next) {
         pool.getConnection(function(err, connection){
-            var param = req.query || req.params;
-            connection.query($sql.delDoc, param.docid, function(err, result){
+            var param = req.body;
+            connection.query($sql.delDoc, +param.docid, function(err, result){
                 if(result) {
                     result = {
                         code: 200,
